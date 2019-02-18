@@ -104,4 +104,3 @@ networks:
   shared: 
     external:
       name: my-net
-      driver: bridge
