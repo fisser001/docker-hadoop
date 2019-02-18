@@ -101,5 +101,7 @@ volumes:
   hadoop_historyserver:
 
 networks:
-  my-net:
-    driver: bridge
+  shared: 
+    external:
+      name: my-net
+      driver: bridge
