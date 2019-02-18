@@ -5,7 +5,7 @@ services:
     image: bde2020/hadoop-namenode:1.1.0-hadoop2.7.1-java8
     container_name: namenode
     networks:
-      - my-net1
+      - shared
     volumes:
       - hadoop_namenode:/hadoop/dfs/name
     environment:
@@ -19,7 +19,7 @@ services:
     image: bde2020/hadoop-resourcemanager:1.1.0-hadoop2.7.1-java8
     container_name: resourcemanager
     networks:
-      - my-net1
+      - shared
     depends_on:
       - namenode
       - datanode1
@@ -31,7 +31,7 @@ services:
     image: bde2020/hadoop-historyserver:1.1.0-hadoop2.7.1-java8
     container_name: historyserver
     networks:
-      - my-net1
+      - shared
     depends_on:
       - namenode
       - datanode1
@@ -45,7 +45,7 @@ services:
     image: bde2020/hadoop-nodemanager:1.1.0-hadoop2.7.1-java8
     container_name: nodemanager1
     networks:
-      - my-net1
+      - shared
     depends_on:
       - namenode
       - datanode1
@@ -57,7 +57,7 @@ services:
     image: bde2020/hadoop-datanode:1.1.0-hadoop2.7.1-java8
     container_name: datanode1
     networks:
-      - my-net1
+      - shared
     depends_on:
       - namenode
     volumes:
@@ -71,7 +71,7 @@ services:
     image: bde2020/hadoop-datanode:1.1.0-hadoop2.7.1-java8
     container_name: datanode2
     networks:
-      - my-net1
+      - shared
     depends_on:
       - namenode
     volumes:
@@ -85,7 +85,7 @@ services:
     image: bde2020/hadoop-datanode:1.1.0-hadoop2.7.1-java8
     container_name: datanode3
     networks:
-      - my-net1
+      - shared
     depends_on:
       - namenode
     volumes:
@@ -103,4 +103,4 @@ volumes:
 networks:
   shared: 
     external:
-      name: my-net1
+      name: shared
