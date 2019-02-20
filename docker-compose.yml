@@ -97,5 +97,4 @@ volumes:
   hadoop_historyserver:
 
 networks:
-  shared: 
-    driver: bridge
+  shared
