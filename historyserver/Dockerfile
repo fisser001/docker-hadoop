@@ -1,5 +1,4 @@
-FROM bde2020/hadoop-base:1.0.0
-MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
+FROM mfisser/hadoop-base:1.0.0-hadoop3.2.0-java8
 
 HEALTHCHECK CMD curl -f http://localhost:8188/ || exit 1
 
