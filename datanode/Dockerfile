@@ -1,4 +1,4 @@
-FROM mfisser/hadoop-base:1.0.0-hadoop3.2.0-java8
+FROM mfisser/hadoop-base:1.0.0-hadoop2.7.1-java8
 
 HEALTHCHECK CMD curl -f http://localhost:50075/ || exit 1
 
