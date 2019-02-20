@@ -102,4 +102,4 @@ volumes:
   hadoop_historyserver:
 
 networks:
-  shared
+  - shared
