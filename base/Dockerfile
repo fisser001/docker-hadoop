@@ -4,7 +4,7 @@ FROM debian:8
 RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
 
 # Update repos and install JAVA JDK 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends openjdk-8-jdk
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-8-jdk
 
 #Set Env for Java
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
@@ -13,7 +13,7 @@ ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends net-tools curl
 
 # Get Hadoop package and export it + delete download
-ENV HADOOP_VERSION 2.7.1
+ENV HADOOP_VERSION 3.2.0
 ENV HADOOP_URL https://www.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz
 RUN set -x \
     && curl -fSL "$HADOOP_URL" -o /tmp/hadoop.tar.gz \
