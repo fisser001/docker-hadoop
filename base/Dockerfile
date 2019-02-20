@@ -1,4 +1,4 @@
-FROM debian:8-slim
+FROM debian:8
 
 #Add Repo
 RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
