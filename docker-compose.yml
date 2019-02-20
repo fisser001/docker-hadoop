@@ -4,8 +4,6 @@ services:
   namenode:
     image: mfisser/hadoop-namenode:1.0.0-hadoop3.2.0-java8
     container_name: namenode
-    networks:
-      - shared
     volumes:
       - hadoop_namenode:/hadoop/dfs/name
     environment:
@@ -18,8 +16,6 @@ services:
   resourcemanager:
     image: mfisser/hadoop-resourcemanager:1.0.0-hadoop3.2.0-java8
     container_name: resourcemanager
-    networks:
-      - shared
     depends_on:
       - namenode
       - datanode1
@@ -30,8 +26,6 @@ services:
   historyserver:
     image: mfisser/hadoop-historyserver:1.0.0-hadoop3.2.0-java8
     container_name: historyserver
-    networks:
-      - shared
     depends_on:
       - namenode
       - datanode1
@@ -44,8 +38,6 @@ services:
   nodemanager1:
     image: mfisser/hadoop-nodemanager:1.0.0-hadoop3.2.0-java8
     container_name: nodemanager1
-    networks:
-      - shared
     depends_on:
       - namenode
       - datanode1
@@ -56,8 +48,6 @@ services:
   datanode1:
     image: mfisser/hadoop-datanode:1.0.0-hadoop3.2.0-java8
     container_name: datanode1
-    networks:
-      - shared
     depends_on:
       - namenode
     volumes:
@@ -70,8 +60,6 @@ services:
   datanode2:
     image: mfisser/hadoop-datanode:1.0.0-hadoop3.2.0-java8
     container_name: datanode2
-    networks:
-      - shared
     depends_on:
       - namenode
     volumes:
@@ -84,8 +72,6 @@ services:
   datanode3:
     image: mfisser/hadoop-datanode:1.0.0-hadoop3.2.0-java8
     container_name: datanode3
-    networks:
-      - shared
     depends_on:
       - namenode
     volumes:
@@ -100,6 +86,3 @@ volumes:
   hadoop_datanode2:
   hadoop_datanode3:
   hadoop_historyserver:
-
-networks:
-  - shared
