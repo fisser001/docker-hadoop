@@ -67,7 +67,7 @@ services:
     env_file:
       - ./hadoop.env     
     ports:
-      - "50076:50076"
+      - "50076:50075"
 
   datanode3:
     image: mfisser/hadoop-datanode:1.0.0-hadoop3.2.0-java8
@@ -79,7 +79,7 @@ services:
     env_file:
       - ./hadoop.env
     ports:
-      - "50077:50077"
+      - "50077:50075"
 volumes:
   hadoop_namenode:
   hadoop_datanode1:
