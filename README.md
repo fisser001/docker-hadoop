@@ -1,5 +1,5 @@
 # Hadoop Docker
-This repository contains a multi node hadoop cluster docker setup and is based of https://github.com/big-data-europe/docker-hadoop
+This repository contains a multi node hadoop cluster docker setup and is based on https://github.com/big-data-europe/docker-hadoop
 
 ## Supported Hadoop Versions
 * 2.7.6 with OpenJDK 8
