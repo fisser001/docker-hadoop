@@ -1,4 +1,4 @@
-version: "3"
+version: "2"
 
 services:
   namenode:
@@ -10,8 +10,6 @@ services:
       - CLUSTER_NAME=test
     env_file:
       - ./hadoop.env
-    ports:
-      - "50070:50070"
 
   resourcemanager:
     image: mfisser/hadoop-resourcemanager:1.0.0-hadoop3.2.0-java8
@@ -54,8 +52,6 @@ services:
       - hadoop_datanode1:/hadoop/dfs/data
     env_file:
       - ./hadoop.env  
-    ports:
-      - "50075:50075"
 
   datanode2:
     image: mfisser/hadoop-datanode:1.0.0-hadoop3.2.0-java8
@@ -66,8 +62,6 @@ services:
       - hadoop_datanode2:/hadoop/dfs/data
     env_file:
       - ./hadoop.env     
-    ports:
-      - "50076:50075"
 
   datanode3:
     image: mfisser/hadoop-datanode:1.0.0-hadoop3.2.0-java8
@@ -78,8 +72,7 @@ services:
       - hadoop_datanode3:/hadoop/dfs/data
     env_file:
       - ./hadoop.env
-    ports:
-      - "50077:50075"
+
 volumes:
   hadoop_namenode:
   hadoop_datanode1:
