@@ -1,53 +1,33 @@
-[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/big-data-europe/Lobby)
-
-# Changes
-
-Version 1.1.0 introduces healthchecks for the containers.
-
 # Hadoop Docker
+This repository contains a multi node hadoop cluster docker setup and is based of https://github.com/big-data-europe/docker-hadoop
 
 ## Supported Hadoop Versions
-* 2.7.1 with OpenJDK 7
-* 2.7.1 with OpenJDK 8
+* 2.7.6 with OpenJDK 8
 
 ## Quick Start
 
-To deploy an example HDFS cluster, run:
-```
-  docker-compose up
-```
+###Deploy the HDFS cluster by executing the following command:
 
-`docker-compose` creates a docker network that can be found by running `docker network list`, e.g. `dockerhadoop_default`.
+1. Navigate to the main folder where docker-compose.yml is stored
+2. Exectue "docker-compose up" (Docker compose need to be installed --> see Docker compose documentation)
 
-Run `docker network inspect` on the network (e.g. `dockerhadoop_default`) to find the IP the hadoop interfaces are published on. Access these interfaces with the following URLs:
+###Get network properties
+Explore which IP Adresses have been given for the services:
 
-* Namenode: http://<dockerhadoop_IP_address>:50070/dfshealth.html#tab-overview
+1. Execute: docker network list
+2. Identify your network (e.g. docker-hadoop_default)
+3. Execute docker network inspect docker
+
+Access these interfaces with the following URLs:
+
+* Namenode: http://<dockerhadoop_IP_address>:50070/
 * History server: http://<dockerhadoop_IP_address>:8188/applicationhistory
 * Datanode: http://<dockerhadoop_IP_address>:50075/
 * Nodemanager: http://<dockerhadoop_IP_address>:8042/node
 * Resource manager: http://<dockerhadoop_IP_address>:8088/
 
-## Configure Environment Variables
+###Navigate within HDFS
+For navigating within HDFS without a extra HDFS Client you can connecz e.g. to the namenode and execute HDFS commands:
 
-The configuration parameters can be specified in the hadoop.env file or as environmental variables for specific services (e.g. namenode, datanode etc.):
-```
-  CORE_CONF_fs_defaultFS=hdfs://namenode:8020
-```
-
-CORE_CONF corresponds to core-site.xml. fs_defaultFS=hdfs://namenode:8020 will be transformed into:
-```
-  <property><name>fs.defaultFS</name><value>hdfs://namenode:8020</value></property>
-```
-To define dash inside a configuration parameter, use triple underscore, such as YARN_CONF_yarn_log___aggregation___enable=true (yarn-site.xml):
-```
-  <property><name>yarn.log-aggregation-enable</name><value>true</value></property>
-```
-
-The available configurations are:
-* /etc/hadoop/core-site.xml CORE_CONF
-* /etc/hadoop/hdfs-site.xml HDFS_CONF
-* /etc/hadoop/yarn-site.xml YARN_CONF
-* /etc/hadoop/httpfs-site.xml HTTPFS_CONF
-* /etc/hadoop/kms-site.xml KMS_CONF
-
-If you need to extend some other configuration file, refer to base/entrypoint.sh bash script.
+1. docker exec -it namenode bin/bash
+2. hdfs dfs -ls /
