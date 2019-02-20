@@ -1,8 +1,8 @@
-version: "2"
+version: "3"
 
 services:
   namenode:
-    image: bde2020/hadoop-namenode:1.1.0-hadoop2.7.1-java8
+    image: mfisser/hadoop-namenode:1.1.0-hadoop3.2.0-java8
     container_name: namenode
     networks:
       - shared
@@ -16,7 +16,7 @@ services:
       - "50070:50070"
 
   resourcemanager:
-    image: bde2020/hadoop-resourcemanager:1.1.0-hadoop2.7.1-java8
+    image: mfisser/hadoop-resourcemanager:1.1.0-hadoop3.2.0-java8
     container_name: resourcemanager
     networks:
       - shared
@@ -28,7 +28,7 @@ services:
       - ./hadoop.env
   
   historyserver:
-    image: bde2020/hadoop-historyserver:1.1.0-hadoop2.7.1-java8
+    image: mfisser/hadoop-historyserver:1.1.0-hadoop3.2.0-java8
     container_name: historyserver
     networks:
       - shared
@@ -42,7 +42,7 @@ services:
       - ./hadoop.env
   
   nodemanager1:
-    image: bde2020/hadoop-nodemanager:1.1.0-hadoop2.7.1-java8
+    image: mfisser/hadoop-nodemanager:1.1.0-hadoop3.2.0-java8
     container_name: nodemanager1
     networks:
       - shared
@@ -54,7 +54,7 @@ services:
       - ./hadoop.env
   
   datanode1:
-    image: bde2020/hadoop-datanode:1.1.0-hadoop2.7.1-java8
+    image: mfisser/hadoop-datanode:1.1.0-hadoop3.2.0-java8
     container_name: datanode1
     networks:
       - shared
@@ -63,12 +63,10 @@ services:
     volumes:
       - hadoop_datanode1:/hadoop/dfs/data
     env_file:
-      - ./hadoop.env
-    ports:
-      - "50075:50075"          
+      - ./hadoop.env  
   
   datanode2:
-    image: bde2020/hadoop-datanode:1.1.0-hadoop2.7.1-java8
+    image: mfisser/hadoop-datanode:1.1.0-hadoop3.2.0-java8
     container_name: datanode2
     networks:
       - shared
@@ -77,12 +75,10 @@ services:
     volumes:
       - hadoop_datanode2:/hadoop/dfs/data
     env_file:
-      - ./hadoop.env
-    ports:
-      - "50076:50076"      
+      - ./hadoop.env     
   
   datanode3:
-    image: bde2020/hadoop-datanode:1.1.0-hadoop2.7.1-java8
+    image: mfisser/hadoop-datanode:1.1.0-hadoop3.2.0-java8
     container_name: datanode3
     networks:
       - shared
