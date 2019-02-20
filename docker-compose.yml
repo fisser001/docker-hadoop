@@ -2,7 +2,7 @@ version: "3"
 
 services:
   namenode:
-    image: mfisser/hadoop-namenode:1.1.0-hadoop3.2.0-java8
+    image: mfisser/hadoop-namenode:1.0.0-hadoop3.2.0-java8
     container_name: namenode
     networks:
       - shared
@@ -16,7 +16,7 @@ services:
       - "50070:50070"
 
   resourcemanager:
-    image: mfisser/hadoop-resourcemanager:1.1.0-hadoop3.2.0-java8
+    image: mfisser/hadoop-resourcemanager:1.0.0-hadoop3.2.0-java8
     container_name: resourcemanager
     networks:
       - shared
@@ -28,7 +28,7 @@ services:
       - ./hadoop.env
   
   historyserver:
-    image: mfisser/hadoop-historyserver:1.1.0-hadoop3.2.0-java8
+    image: mfisser/hadoop-historyserver:1.0.0-hadoop3.2.0-java8
     container_name: historyserver
     networks:
       - shared
@@ -42,7 +42,7 @@ services:
       - ./hadoop.env
   
   nodemanager1:
-    image: mfisser/hadoop-nodemanager:1.1.0-hadoop3.2.0-java8
+    image: mfisser/hadoop-nodemanager:1.0.0-hadoop3.2.0-java8
     container_name: nodemanager1
     networks:
       - shared
@@ -54,7 +54,7 @@ services:
       - ./hadoop.env
   
   datanode1:
-    image: mfisser/hadoop-datanode:1.1.0-hadoop3.2.0-java8
+    image: mfisser/hadoop-datanode:1.0.0-hadoop3.2.0-java8
     container_name: datanode1
     networks:
       - shared
@@ -66,7 +66,7 @@ services:
       - ./hadoop.env  
   
   datanode2:
-    image: mfisser/hadoop-datanode:1.1.0-hadoop3.2.0-java8
+    image: mfisser/hadoop-datanode:1.0.0-hadoop3.2.0-java8
     container_name: datanode2
     networks:
       - shared
@@ -78,7 +78,7 @@ services:
       - ./hadoop.env     
   
   datanode3:
-    image: mfisser/hadoop-datanode:1.1.0-hadoop3.2.0-java8
+    image: mfisser/hadoop-datanode:1.0.0-hadoop3.2.0-java8
     container_name: datanode3
     networks:
       - shared
