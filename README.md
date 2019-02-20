@@ -27,7 +27,7 @@ Access these interfaces with the following URLs:
 * Resource manager: http://<dockerhadoop_IP_address>:8088/
 
 ### Navigate within HDFS
-For navigating within HDFS without a extra HDFS Client you can connecz e.g. to the namenode and execute HDFS commands:
+For navigating within HDFS without a extra HDFS Client you can connect e.g. to the namenode and execute HDFS commands:
 
 1. docker exec -it namenode bin/bash
 2. hdfs dfs -ls /
