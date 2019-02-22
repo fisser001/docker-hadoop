@@ -20,6 +20,13 @@ RUN set -x \
     && tar -xvf /tmp/hadoop.tar.gz -C /opt/ \
     && rm /tmp/hadoop.tar.gz*
 
+
+ENV TEZ_URL http://apache.mirror.digionline.de/tez/0.9.1/apache-tez-0.9.1-bin.tar.gz
+RUN set -x \
+    && curl -fSL "$TEZ_URL" -o /tmp/tez.tar.gz \
+    && tar -xvf /tmp/tez.tar.gz -C /opt/tez 
+    #&& rm /tmp/tez.tar.gz*
+
 # Set Env    
 ENV HADOOP_HOME=/opt/hadoop-$HADOOP_VERSION
 ENV HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
@@ -27,10 +34,17 @@ ENV MULTIHOMED_NETWORK=1
 ENV USER=root
 ENV PATH $HADOOP_HOME/bin/:$PATH
 
+ENV TEZ_HOME=/opt/tez
+ENV TEZ_CONF_DIR=/opt/tez/conf
+ENV TEZ_JARS=$TEZ_HOME
+
 RUN cp $HADOOP_HOME/etc/hadoop/mapred-site.xml.template $HADOOP_HOME/etc/hadoop/mapred-site.xml
 
 RUN mkdir /opt/hadoop-$HADOOP_VERSION/logs
 RUN mkdir /hadoop-data
+
+RUN mkdir -p /opt/tez/conf
+ADD base/tez-site.xml /opt/tez/conf
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod a+x /entrypoint.sh
