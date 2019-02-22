@@ -25,7 +25,7 @@ RUN mkdir -p /opt/tez/
 ENV TEZ_URL http://apache.mirror.digionline.de/tez/0.9.1/apache-tez-0.9.1-bin.tar.gz
 RUN set -x \
     && curl -fSL "$TEZ_URL" -o /tmp/apache-tez-0.9.1-bin.tar.gz \
-    && tar -xvf /tmp/apache-tez-0.9.1-bin -C /opt/tez/
+    && tar -xvf /tmp/apache-tez-0.9.1-bin.tar.gz -C /opt/tez/
     #&& rm /tmp/tez.tar.gz*
 
 # Set Env    
@@ -46,8 +46,8 @@ RUN cp $HADOOP_HOME/etc/hadoop/mapred-site.xml.template $HADOOP_HOME/etc/hadoop/
 RUN mkdir /opt/hadoop-$HADOOP_VERSION/logs
 RUN mkdir /hadoop-data
 
-RUN mkdir -p /opt/tez/conf
-ADD tez-site.xml /opt/tez/conf
+#RUN mkdir -p /opt/tez/apache-tez-0.9.1-bin/conf
+ADD tez-site.xml /opt/tez/apache-tez-0.9.1-bin/conf
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod a+x /entrypoint.sh
