@@ -24,7 +24,7 @@ RUN mkdir -p /opt/tez/
 
 ENV TEZ_URL http://apache.mirror.digionline.de/tez/0.9.1/apache-tez-0.9.1-bin.tar.gz
 RUN set -x \
-    && curl -fSL "$TEZ_URL" -o /tmp/tez.tar.gz \
+    && curl -fSL "$TEZ_URL" -o /tmp/apache-tez-0.9.1-bin.tar.gz \
     && tar -xvf /tmp/apache-tez-0.9.1-bin -C /opt/tez/
     #&& rm /tmp/tez.tar.gz*
 
