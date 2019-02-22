@@ -45,7 +45,7 @@ RUN mkdir /opt/hadoop-$HADOOP_VERSION/logs
 RUN mkdir /hadoop-data
 
 RUN mkdir -p /opt/tez/conf
-ADD base/tez-site.xml /opt/tez/conf
+ADD tez-site.xml /opt/tez/conf
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod a+x /entrypoint.sh
