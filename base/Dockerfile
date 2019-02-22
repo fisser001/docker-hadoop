@@ -20,11 +20,12 @@ RUN set -x \
     && tar -xvf /tmp/hadoop.tar.gz -C /opt/ \
     && rm /tmp/hadoop.tar.gz*
 
+RUN mkdir -p /opt/tez/
 
 ENV TEZ_URL http://apache.mirror.digionline.de/tez/0.9.1/apache-tez-0.9.1-bin.tar.gz
 RUN set -x \
     && curl -fSL "$TEZ_URL" -o /tmp/tez.tar.gz \
-    && tar -xvf /tmp/tez.tar.gz -C /opt/tez 
+    && tar -xvf /tmp/tez.tar.gz -C /opt/tez/
     #&& rm /tmp/tez.tar.gz*
 
 # Set Env    
