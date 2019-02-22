@@ -35,9 +35,11 @@ ENV MULTIHOMED_NETWORK=1
 ENV USER=root
 ENV PATH $HADOOP_HOME/bin/:$PATH
 
-ENV TEZ_HOME=/opt/tez
-ENV TEZ_CONF_DIR=/opt/tez/conf
+ENV TEZ_HOME=/opt/tez/apache-tez-0.9.1-bin
+ENV TEZ_CONF_DIR=$TEZ_HOME/conf
 ENV TEZ_JARS=$TEZ_HOME
+ENV HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}/*:${TEZ_JARS}/lib/*
+ENV HIVE_AUX_JARS_PATH="$HIVE_AUX_JARS_PATH:$TEZ_JARS"
 
 RUN cp $HADOOP_HOME/etc/hadoop/mapred-site.xml.template $HADOOP_HOME/etc/hadoop/mapred-site.xml
 
