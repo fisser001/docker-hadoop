@@ -2,7 +2,12 @@
 
 # Set some sensible defaults
 export CORE_CONF_fs_defaultFS=${CORE_CONF_fs_defaultFS:-hdfs://`hostname -f`:8020}
-export HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}/*:${TEZ_JARS}/lib/*
+
+if [ -z "$HIVE_AUX_JARS_PATH" ]; then
+export HIVE_AUX_JARS_PATH="$TEZ_JARS"
+else
+export HIVE_AUX_JARS_PATH="$HIVE_AUX_JARS_PATH:$TEZ_JARS"
+fi
 
 function addProperty() {
   local path=$1
@@ -57,7 +62,6 @@ if [ "$MULTIHOMED_NETWORK" = "1" ]; then
 
     # MAPRED
     addProperty $HADOOP_HOME/etc/hadoop/mapred-site.xml yarn.nodemanager.bind-host 0.0.0.0
-    addProperty $HADOOP_HOME/etc/hadoop/mapred-site.xml mapreduce.framework.name yarn
 fi
 
 if [ -n "$GANGLIA_HOST" ]; then
