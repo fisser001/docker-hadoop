@@ -24,7 +24,7 @@ RUN set -x \
 
 RUN mkdir -p /opt/tez/
 
-ENV TEZ_VERSION 0.7.0
+ENV TEZ_VERSION 0.8.5
 #ENV TEZ_URL http://apache.mirror.digionline.de/tez/0.8.5/apache-tez-0.8.5-bin.tar.gz
 ENV TEZ_URL http://ftp.halifax.rwth-aachen.de/apache/tez/$TEZ_VERSION/apache-tez-$TEZ_VERSION-bin.tar.gz
 RUN set -x \
