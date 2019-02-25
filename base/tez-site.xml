@@ -6,8 +6,4 @@
         <name>tez.lib.uris</name>
         <value>${CORE_CONF_fs_defaultFS}/apps/tez/apache-tez-$TEZ_VERSION-bin.tar.gz</value>
     </property>
-    <property>
-        <name>tez.use.cluster.hadoop-libs</name>
-        <value>true</value>
-    </property>
 </configuration>
