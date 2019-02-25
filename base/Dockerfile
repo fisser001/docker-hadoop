@@ -49,7 +49,7 @@ ENV HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}/*:${TEZ_JARS}/lib/*
 
 RUN wget http://www-us.apache.org/dist/tez/$TEZ_VERSION/apache-tez-$TEZ_VERSION-src.tar.gz && \
     tar xvzf apache-tez-$TEZ_VERSION-src.tar.gz && \
-    cd apache-tez-$TEZ_VERSION-src\tez-ui && \
+    cd apache-tez-$TEZ_VERSION-src/tez-ui && \
     rm pom.xml
 
 ADD pom.xml apache-tez-$TEZ_VERSION-src\tez-ui
