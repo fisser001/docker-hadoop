@@ -10,7 +10,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -t jessie-b
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 
 #Install curl
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends net-tools curl netcat nano git node npn npm
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends net-tools curl netcat nano git node node-gyp npn npm
 
 # Get Hadoop package and export it + delete download
 #ENV HADOOP_VERSION 2.7.6
