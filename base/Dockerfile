@@ -52,7 +52,7 @@ RUN wget http://www-us.apache.org/dist/tez/$TEZ_VERSION/apache-tez-$TEZ_VERSION-
     #cd /tez_conf/ && \
     #javac ModifyHadoopVer.java && \
     #java ModifyHadoopVer /apache-tez-0.9.0-src/pom.xml && \
-    cd opt/tez/apache-tez-$TEZ_VERSION-src && \
+    cd apache-tez-$TEZ_VERSION-src && \
     echo '{ "allow_root": true }' > /root/.bowerrc && \
     mvn clean package -DskipTests=true -Dmaven.javadoc.skip=true
 
