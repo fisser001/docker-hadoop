@@ -45,7 +45,7 @@ ENV TEZ_JARS="$TEZ_HOME"
 ENV HIVE_AUX_JARS_PATH="$TEZ_JARS"
 ENV HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}/*:${TEZ_JARS}/lib/*
 
-COPY tez_conf/ /tez_conf/
+
 
 RUN wget http://www-us.apache.org/dist/tez/$TEZ_VERSION/apache-tez-$TEZ_VERSION-src.tar.gz && \
     tar xvzf apache-tez-$TEZ_VERSION-src.tar.gz && \
