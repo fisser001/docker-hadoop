@@ -52,7 +52,7 @@ RUN wget http://www-us.apache.org/dist/tez/$TEZ_VERSION/apache-tez-$TEZ_VERSION-
     cd apache-tez-$TEZ_VERSION-src/tez-ui && \
     rm pom.xml
 
-ADD pom.xml apache-tez-$TEZ_VERSION-src\tez-ui
+ADD pom.xml apache-tez-$TEZ_VERSION-src/tez-ui
 
     #cd /tez_conf/ && \
     #javac ModifyHadoopVer.java && \
