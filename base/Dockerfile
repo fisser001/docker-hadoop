@@ -24,55 +24,12 @@ RUN set -x \
 
 RUN mkdir -p /opt/tez/
 
-#tez
-RUN apt-get -y install maven build-essential git && \
-    wget  https://github.com/google/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.gz && \
-    tar xvzf protobuf-2.5.0.tar.gz && \
-    rm protobuf-2.5.0.tar.gz && \
-    cd protobuf-2.5.0 && \
-    ./configure && \
-    make && \
-    make check && \
-    make install && \
-    ldconfig && \
-    protoc --version && \
-    cd ..
-
 ENV TEZ_VERSION 0.8.4
-ENV TEZ_HOME=/opt/tez
-ENV TEZ_CONF_DIR=$TEZ_HOME/conf
-ENV TEZ_JARS="$TEZ_HOME"
-ENV HIVE_AUX_JARS_PATH="$TEZ_JARS"
-ENV HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}/*:${TEZ_JARS}/lib/*
-
-
-
-RUN wget http://www-us.apache.org/dist/tez/$TEZ_VERSION/apache-tez-$TEZ_VERSION-src.tar.gz && \
-    tar xvzf apache-tez-$TEZ_VERSION-src.tar.gz && \
-    cd apache-tez-$TEZ_VERSION-src/tez-ui && \
-    rm pom.xml
-
-ADD pom.xml apache-tez-$TEZ_VERSION-src/tez-ui
-
-    #cd /tez_conf/ && \
-    #javac ModifyHadoopVer.java && \
-    #java ModifyHadoopVer /apache-tez-0.9.0-src/pom.xml && \
- RUN cd apache-tez-$TEZ_VERSION-src && \
-    echo '{ "allow_root": true }' > /root/.bowerrc && \
-    mvn clean package -Dhadoop.version=2.6.0 -DskipTests=true -Dmaven.javadoc.skip=true
-
-RUN mkdir $TEZ_HOME && \
-    tar xvzf /apache-tez-$TEZ_VERSION-src/tez-dist/target/tez-$TEZ_VERSION-minimal.tar.gz -C $TEZ_HOME && \ 
-    mkdir $TEZ_HOME/conf
-
-ADD tez-site.xml $TEZ_HOME/conf
-
-
 #ENV TEZ_URL http://apache.mirror.digionline.de/tez/0.8.5/apache-tez-0.8.5-bin.tar.gz
-#ENV TEZ_URL http://ftp.halifax.rwth-aachen.de/apache/tez/$TEZ_VERSION/apache-tez-$TEZ_VERSION-bin.tar.gz
-#RUN set -x \
- #   && curl -fSL "$TEZ_URL" -o /tmp/apache-tez-$TEZ_VERSION-bin.tar.gz \
-  #  && tar -xvf /tmp/apache-tez-$TEZ_VERSION-bin.tar.gz -C /opt/tez/
+ENV TEZ_URL http://ftp.halifax.rwth-aachen.de/apache/tez/$TEZ_VERSION/apache-tez-$TEZ_VERSION-bin.tar.gz
+RUN set -x \
+    && curl -fSL "$TEZ_URL" -o /tmp/apache-tez-$TEZ_VERSION-bin.tar.gz \
+    && tar -xvf /tmp/apache-tez-$TEZ_VERSION-bin.tar.gz -C /opt/tez/
     #&& rm /tmp/tez.tar.gz*
 
 # Set Env    
@@ -82,10 +39,10 @@ ENV MULTIHOMED_NETWORK=1
 ENV USER=root
 ENV PATH $HADOOP_HOME/bin/:$PATH
 
-#ENV TEZ_HOME=/opt/tez/apache-tez-$TEZ_VERSION-bin
-#ENV TEZ_CONF_DIR=$TEZ_HOME/conf
-#ENV TEZ_JARS=$TEZ_HOME/*:$TEZ_HOME/lib/*
-#ENV HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}:$HADOOP_CLASSPATH
+ENV TEZ_HOME=/opt/tez/apache-tez-$TEZ_VERSION-bin
+ENV TEZ_CONF_DIR=$TEZ_HOME/conf
+ENV TEZ_JARS=$TEZ_HOME/*:$TEZ_HOME/lib/*
+ENV HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}:$HADOOP_CLASSPATH
 
 RUN cp $HADOOP_HOME/etc/hadoop/mapred-site.xml.template $HADOOP_HOME/etc/hadoop/mapred-site.xml
 
@@ -93,7 +50,7 @@ RUN mkdir /opt/hadoop-$HADOOP_VERSION/logs
 RUN mkdir /hadoop-data
 
 #RUN mkdir -p /opt/tez/apache-tez-0.9.1-bin/conf
-#ADD tez-site.xml /opt/tez/apache-tez-$TEZ_VERSION-bin/conf
+ADD tez-site.xml /opt/tez/apache-tez-$TEZ_VERSION-bin/conf
 #ADD tez-site.xml $TEZ_CONF_DIR
 
 ADD entrypoint.sh /entrypoint.sh
