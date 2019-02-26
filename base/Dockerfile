@@ -42,10 +42,11 @@ ENV PATH $HADOOP_HOME/bin/:$PATH
 ENV TEZ_HOME=/opt/tez/apache-tez-$TEZ_VERSION-bin
 ENV TEZ_CONF_DIR=$TEZ_HOME/conf
 ENV TEZ_JARS=$TEZ_HOME/*:$TEZ_HOME/lib/*
-ENV HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}:$HADOOP_CLASSPATH
+#ENV HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}:$HADOOP_CLASSPATH
 
 RUN cp $HADOOP_HOME/etc/hadoop/mapred-site.xml.template $HADOOP_HOME/etc/hadoop/mapred-site.xml
-ADD yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml
+ADD conf/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml
+ADD conf/hadoop-env.sh $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 
 RUN mkdir /opt/hadoop-$HADOOP_VERSION/logs
 RUN mkdir /hadoop-data
