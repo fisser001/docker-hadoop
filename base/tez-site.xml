@@ -4,6 +4,6 @@
 <configuration>
     <property>
         <name>tez.lib.uris</name>
-        <value>http://namenode:8020/apps/tez/apache-tez-8.5.0-bin.tar.gz</value>
+        <value>hdfs://namenode:8020/apps/tez/tez-0.9.-minimal.tar.gz</value>
     </property>
 </configuration>
