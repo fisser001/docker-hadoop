@@ -27,7 +27,7 @@ RUN mkdir -p /opt/tez/
 ENV TEZ_VERSION 0.9.0
 #ENV TEZ_URL http://apache.mirror.digionline.de/tez/0.8.5/apache-tez-0.8.5-bin.tar.gz
 #ENV TEZ_URL http://ftp.halifax.rwth-aachen.de/apache/tez/$TEZ_VERSION/apache-tez-$TEZ_VERSION-bin.tar.gz
-ADD tez-$TEZ_VERSION-minimal.tar.gz /tmp/
+COPY tez-$TEZ_VERSION-minimal.tar.gz /tmp/
 RUN set -x \
   #  && curl -fSL "$TEZ_URL" -o /tmp/apache-tez-$TEZ_VERSION-bin.tar.gz \
     && tar -xvf /tmp/tez-$TEZ_VERSION-minimal.tar.gz -C /opt/tez/
