@@ -45,45 +45,45 @@ ENV TEZ_CONF_DIR=$TEZ_HOME/conf
 ENV TEZ_JARS=$TEZ_HOME/*:$TEZ_HOME/lib/*
 #ENV HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}:$HADOOP_CLASSPATH
 ENV HADOOP_CLASSPATH=$TEZ_CONF_DIR
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/hadoop-shim-0.9.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/hadoop-shim-2.6-0.9.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/tez-api-0.9.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/tez-common-0.9.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/tez-dag-0.9.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/tez-examples-0.9.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/tez-ext-service-tests-0.9.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/tez-history-parser-0.9.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/tez-javadoc-tools-0.9.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/tez-job-analyzer-0.9.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/tez-mapreduce-0.9.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/tez-runtime-internals-0.9.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/tez-runtime-library-0.9.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/tez-tests-0.9.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/tez-yarn-timeline-history-0.9.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/tez-yarn-timeline-history-with-acls-0.9.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/RoaringBitmap-0.4.9.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/async-http-client-1.8.16.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/commons-cli-1.2.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/commons-codec-1.4.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/commons-collections-3.2.2.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/commons-collections4-4.1.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/commons-io-2.4.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/commons-lang-2.6.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/commons-math3-3.1.1.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/guava-11.0.2.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/hadoop-mapreduce-client-common-2.6.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/hadoop-mapreduce-client-core-2.6.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/jersey-client-1.9.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/jersey-json-1.9.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/jettison-1.3.4.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/jetty-6.1.26.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/jetty-util-6.1.26.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/jsr305-3.0.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/metrics-core-3.1.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/protobuf-java-2.5.0.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/servlet-api-2.5.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/slf4j-api-1.7.10.jar
-ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-0.9.0-minimal/lib/slf4j-log4j12-1.7.10.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/hadoop-shim-0.9.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/hadoop-shim-2.6-0.9.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-api-0.9.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-common-0.9.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-dag-0.9.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-examples-0.9.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-ext-service-tests-0.9.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-history-parser-0.9.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-javadoc-tools-0.9.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-job-analyzer-0.9.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-mapreduce-0.9.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-runtime-internals-0.9.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-runtime-library-0.9.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-tests-0.9.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-yarn-timeline-history-0.9.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/tez-yarn-timeline-history-with-acls-0.9.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/RoaringBitmap-0.4.9.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/async-http-client-1.8.16.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/commons-cli-1.2.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/commons-codec-1.4.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/commons-collections-3.2.2.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/commons-collections4-4.1.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/commons-io-2.4.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/commons-lang-2.6.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/commons-math3-3.1.1.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/guava-11.0.2.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/hadoop-mapreduce-client-common-2.6.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/hadoop-mapreduce-client-core-2.6.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/jersey-client-1.9.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/jersey-json-1.9.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/jettison-1.3.4.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/jetty-6.1.26.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/jetty-util-6.1.26.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/jsr305-3.0.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/metrics-core-3.1.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/protobuf-java-2.5.0.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/servlet-api-2.5.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/slf4j-api-1.7.10.jar
+ENV HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/opt/tez/lib/slf4j-log4j12-1.7.10.jar
 
 
 RUN cp $HADOOP_HOME/etc/hadoop/mapred-site.xml.template $HADOOP_HOME/etc/hadoop/mapred-site.xml
@@ -93,8 +93,8 @@ ADD yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml
 RUN mkdir /opt/hadoop-$HADOOP_VERSION/logs
 RUN mkdir /hadoop-data
 
-#RUN mkdir -p /opt/tez/apache-tez-0.9.1-bin/conf
-ADD tez-site.xml /opt/tez/tez-0.9.0-minimal/conf
+RUN mkdir -p /opt/tez/conf
+ADD tez-site.xml /opt/tez/conf
 #ADD tez-site.xml $TEZ_CONF_DIR
 
 ADD entrypoint.sh /entrypoint.sh
