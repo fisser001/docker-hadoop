@@ -4,9 +4,11 @@
 export CORE_CONF_fs_defaultFS=${CORE_CONF_fs_defaultFS:-hdfs://`hostname -f`:8020}
 
 for jar in `ls $TEZ_HOME |grep jar`; do
+    echo "setToHadoopClasspath $jar"
     export HADOOP_CLASSPATH=$HADOOP_CLASSPATH:$TEZ_HOME/$jar
 done
 for jar in `ls $TEZ_HOME/lib`; do
+    echo "setToHadoopClasspath $jar"
     export HADOOP_CLASSPATH=$HADOOP_CLASSPATH:$TEZ_HOME/lib/$jar
 done
 
