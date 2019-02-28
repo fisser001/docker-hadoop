@@ -49,6 +49,8 @@ ENV TEZ_JARS=$TEZ_HOME/*:$TEZ_HOME/lib/*
 
 RUN cp $HADOOP_HOME/etc/hadoop/mapred-site.xml.template $HADOOP_HOME/etc/hadoop/mapred-site.xml
 ADD yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml
+ADD mapred-site.xml $HADOOP_HOME/etc/hadoop/mapred-site.xml
+ADD hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml
 #ADD hadoop-env.sh $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 
 RUN mkdir /opt/hadoop-$HADOOP_VERSION/logs
