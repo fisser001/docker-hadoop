@@ -31,7 +31,7 @@ COPY tez-$TEZ_VERSION.tar.gz /tmp/
 COPY tez-$TEZ_VERSION-minimal.tar.gz /tmp/
 RUN set -x \
   #  && curl -fSL "$TEZ_URL" -o /tmp/apache-tez-$TEZ_VERSION-bin.tar.gz \
-    && tar -xvf /tmp/tez-$TEZ_VERSION-minimal.tar.gz -C /opt/tez/
+    && tar -xvf /tmp/tez-$TEZ_VERSION-minimal.tar.gz -C /opt/tez/tez-$TEZ_VERSION/
     #&& rm /tmp/tez.tar.gz*
 
 # Set Env    
@@ -41,7 +41,7 @@ ENV MULTIHOMED_NETWORK=1
 ENV USER=root
 ENV PATH $HADOOP_HOME/bin/:$PATH
 
-ENV TEZ_HOME=/opt/tez/tez-$TEZ_VERSION-minimal
+ENV TEZ_HOME=/opt/tez/tez-$TEZ_VERSION
 ENV TEZ_CONF_DIR=$TEZ_HOME/conf
 ENV TEZ_JARS=$TEZ_HOME/*:$TEZ_HOME/lib/*
 #ENV HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}:$HADOOP_CLASSPATH
@@ -53,8 +53,8 @@ ADD yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml
 RUN mkdir /opt/hadoop-$HADOOP_VERSION/logs
 RUN mkdir /hadoop-data
 
-RUN mkdir -p /opt/tez/conf
-ADD tez-site.xml /opt/tez/conf
+RUN mkdir -p $TEZ_HOME/conf
+ADD tez-site.xml $TEZ_CONF_DIR
 #ADD tez-site.xml $TEZ_CONF_DIR
 
 ADD entrypoint.sh /entrypoint.sh
