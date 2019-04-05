@@ -13,7 +13,7 @@
 -->
 <configuration>
 <property><name>yarn.scheduler.capacity.root.queues</name><value>default</value><description>The queues at the this level (root is the root queue).</description></property>
-<property><name>yarn.scheduler.capacity.root.default.user-limit-factor</name><value>0.5</value><description> Default queue user limit a percentage from 0.0 to 1.0.</description> </property> 
+<property><name>yarn.scheduler.capacity.root.default.user-limit-factor</name><value>1</value><description> Default queue user limit a percentage from 0.0 to 1.0.</description> </property> 
 <property><name>yarn.scheduler.capacity.root.default.capacity</name><value>100</value></property> 
 <property><name>yarn.scheduler.capacity.root.default.maximum-capacity</name><value>100</value><description> The maximum capacity of the default queue. </description> </property> 
 <property><name>yarn.scheduler.capacity.root.default.state</name><value>RUNNING</value><description> The state of the default queue. State can be one of RUNNING or STOPPED.</description> </property> 
@@ -28,6 +28,7 @@
 <property><name>yarn.scheduler.capacity.queue-mappings-override.enable</name><value>false</value><description> If a queue mapping is present, will it override the value specified by the user? This can be used by administrators to place jobs in queues that are different than the one specified by the user. The default is false.</description> </property> 
 <property><name>yarn.scheduler.capacity.per-node-heartbeat.maximum-offswitch-assignments</name><value>1</value><description> Controls the number of OFF_SWITCH assignments allowed during a node's heartbeat. Increasing this value can improve scheduling rate for OFF_SWITCH containers. Lower values reduce "clumping" of applications on particular nodes. The default is 1. Legal values are 1-MAX_INT. This config is refreshable.</description> </property> 
 <property><name>yarn.scheduler.capacity.application.fail-fast</name><value>false</value><description> Whether RM should fail during recovery if previous applications' queue is no longer valid.</description> </property> 
-<property><name>yarn.scheduler.capacity.maximum-am-resource-percent</name><value>0.2</value></property> 
+<property><name>yarn.scheduler.capacity.root.maximum-am-resource-percent</name><value>0.4</value></property> 
 <property><name>yarn.scheduler.capacity.default.maximum-am-resource-percent</name><value>0.4</value></property> 
+<property><name>yarn.scheduler.capacity.default.maximum-allocation-vcores</name><value>6</value></property>
 </configuration>
