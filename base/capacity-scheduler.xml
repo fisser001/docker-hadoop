@@ -30,5 +30,6 @@
 <property><name>yarn.scheduler.capacity.application.fail-fast</name><value>false</value><description> Whether RM should fail during recovery if previous applications' queue is no longer valid.</description> </property> 
 <property><name>yarn.scheduler.capacity.root.maximum-am-resource-percent</name><value>0.4</value></property> 
 <property><name>yarn.scheduler.capacity.default.maximum-am-resource-percent</name><value>0.4</value></property> 
-<property><name>yarn.scheduler.capacity.default.maximum-allocation-vcores</name><value>6</value></property>
+<property><name>yarn.scheduler.capacity.root.maximum-allocation-vcores</name><value>20</value></property> 
+<property><name>yarn.scheduler.capacity.default.maximum-allocation-vcores</name><value>20</value></property>
 </configuration>
