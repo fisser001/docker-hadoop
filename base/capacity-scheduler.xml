@@ -13,9 +13,13 @@
 -->
 <configuration>
 <property><name>yarn.scheduler.capacity.root.queues</name><value>default</value><description>The queues at the this level (root is the root queue).</description></property>
-<property><name>yarn.scheduler.capacity.root.default.queues</name><value>multiple1,multiple2,multiple3,multiple4</value><description>The queues at the this level (root is the root queue).</description></property>
+<property><name>yarn.scheduler.capacity.root.default.queues</name><value>multiple1, multiple2, multiple3, multiple4</value><description>The queues at the this level (root is the root queue).</description></property>
 <property><name>yarn.scheduler.capacity.root.default.user-limit-factor</name><value>1</value><description> Default queue user limit a percentage from 0.0 to 1.0.</description> </property> 
 <property><name>yarn.scheduler.capacity.root.default.capacity</name><value>100</value></property> 
+<property><name>yarn.scheduler.capacity.root.default.multiple1.capacity</name><value>25</value><description> The maximum capacity of the default queue. </description> </property> 
+<property><name>yarn.scheduler.capacity.root.default.multiple2.capacity</name><value>25</value><description> The maximum capacity of the default queue. </description> </property> 
+<property><name>yarn.scheduler.capacity.root.default.multiple3.capacity</name><value>25</value><description> The maximum capacity of the default queue. </description> </property> 
+<property><name>yarn.scheduler.capacity.root.default.multiple4.capacity</name><value>25</value><description> The maximum capacity of the default queue. </description> </property> 
 <property><name>yarn.scheduler.capacity.root.default.maximum-capacity</name><value>100</value><description> The maximum capacity of the default queue. </description> </property> 
 <property><name>yarn.scheduler.capacity.root.default.multiple1.maximum-capacity</name><value>25</value><description> The maximum capacity of the default queue. </description> </property> 
 <property><name>yarn.scheduler.capacity.root.default.multiple2.maximum-capacity</name><value>25</value><description> The maximum capacity of the default queue. </description> </property> 
