@@ -11,7 +11,7 @@ services:
     environment:
       - CLUSTER_NAME=test
     env_file:
-      - ./hadoop-hive.env
+      - ./hadoop.env
 
   resourcemanager:
     image: mfisser/hadoop-resourcemanager:1.0.0-hadoop2.7.6-java8
@@ -25,7 +25,7 @@ services:
       - datanode1
       - datanode2
     env_file:
-      - ./hadoop-hive.env
+      - ./hadoop.env
   
   historyserver:
     image: mfisser/hadoop-historyserver:1.0.0-hadoop2.7.6-java8
@@ -39,7 +39,7 @@ services:
       - datanode1
       - datanode2
     env_file:
-      - ./hadoop-hive.env
+      - ./hadoop.env
   
   nodemanager1:
     image: mfisser/hadoop-nodemanager:1.0.0-hadoop2.7.6-java8
@@ -53,7 +53,7 @@ services:
       - datanode1
       - datanode2
     env_file:
-      - ./hadoop-hive.env
+      - ./hadoop.env
 
   nodemanager2:
     image: mfisser/hadoop-nodemanager:1.0.0-hadoop2.7.6-java8
@@ -67,7 +67,7 @@ services:
       - datanode1
       - datanode2
     env_file:
-      - ./hadoop-hive.env      
+      - ./hadoop.env      
   
   datanode1:
     image: mfisser/hadoop-datanode:1.0.0-hadoop2.7.6-java8
@@ -79,7 +79,7 @@ services:
         source: hadoop_datanode1
         target: /hadoop/dfs/data
     env_file:
-      - ./hadoop-hive.env  
+      - ./hadoop.env  
 
   datanode2:
     image: mfisser/hadoop-datanode:1.0.0-hadoop2.7.6-java8
@@ -91,7 +91,7 @@ services:
         source: hadoop_datanode2
         target: /hadoop/dfs/data
     env_file:
-      - ./hadoop-hive.env     
+      - ./hadoop.env     
 
   datanode3:
     image: mfisser/hadoop-datanode:1.0.0-hadoop2.7.6-java8
@@ -103,7 +103,7 @@ services:
         source: hadoop_datanode3
         target: /hadoop/dfs/data
     env_file:
-      - ./hadoop-hive.env
+      - ./hadoop.env
 
 
 volumes:
