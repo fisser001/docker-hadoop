@@ -13,7 +13,7 @@
 -->
 <configuration>
 <property><name>yarn.scheduler.capacity.root.queues</name><value>default</value><description>The queues at the this level (root is the root queue).</description></property>
-<property><name>yarn.scheduler.capacity.default.queues</name><value>multiple1,multiple2,multiple3,multiple4</value><description>The queues at the this level (root is the root queue).</description></property>
+<property><name>yarn.scheduler.capacity.root.default.queues</name><value>multiple1,multiple2,multiple3,multiple4</value><description>The queues at the this level (root is the root queue).</description></property>
 <property><name>yarn.scheduler.capacity.root.default.user-limit-factor</name><value>1</value><description> Default queue user limit a percentage from 0.0 to 1.0.</description> </property> 
 <property><name>yarn.scheduler.capacity.root.default.capacity</name><value>100</value></property> 
 <property><name>yarn.scheduler.capacity.root.default.maximum-capacity</name><value>100</value><description> The maximum capacity of the default queue. </description> </property> 
@@ -34,7 +34,7 @@
 <property><name>yarn.scheduler.capacity.per-node-heartbeat.maximum-offswitch-assignments</name><value>1</value><description> Controls the number of OFF_SWITCH assignments allowed during a node's heartbeat. Increasing this value can improve scheduling rate for OFF_SWITCH containers. Lower values reduce "clumping" of applications on particular nodes. The default is 1. Legal values are 1-MAX_INT. This config is refreshable.</description> </property> 
 <property><name>yarn.scheduler.capacity.application.fail-fast</name><value>false</value><description> Whether RM should fail during recovery if previous applications' queue is no longer valid.</description> </property> 
 <property><name>yarn.scheduler.capacity.root.maximum-am-resource-percent</name><value>0.4</value></property> 
-<property><name>yarn.scheduler.capacity.default.maximum-am-resource-percent</name><value>0.4</value></property> 
+<property><name>yarn.scheduler.capacity.root.default.maximum-am-resource-percent</name><value>0.4</value></property> 
 <property><name>yarn.scheduler.capacity.default.multiple1.maximum-am-resource-percent</name><value>0.2</value></property> 
 <property><name>yarn.scheduler.capacity.default.multiple2.maximum-am-resource-percent</name><value>0.2</value></property> 
 <property><name>yarn.scheduler.capacity.default.multiple3.maximum-am-resource-percent</name><value>0.2</value></property> 
@@ -44,7 +44,7 @@
 <property><name>yarn.scheduler.capacity.default.multiple2.maximum-allocation-vcores</name><value>20</value></property>
 <property><name>yarn.scheduler.capacity.default.multiple3.maximum-allocation-vcores</name><value>20</value></property>
 <property><name>yarn.scheduler.capacity.default.multiple4.maximum-allocation-vcores</name><value>20</value></property>
-<property><name>yarn.scheduler.capacity.default.maximum-allocation-vcores</name><value>20</value></property>
+<property><name>yarn.scheduler.capacity.root.default.maximum-allocation-vcores</name><value>20</value></property>
 <property><name>yarn.scheduler.capacity.root.ordering-policy</name><value>fair</value></property>
-<property><name>yarn.scheduler.capacity.default.ordering-policy</name><value>fair</value></property>
+<property><name>yarn.scheduler.capacity.root.default.ordering-policy</name><value>fair</value></property>
 </configuration>
