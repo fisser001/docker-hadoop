@@ -1,25 +1,27 @@
 <?xml version="1.0"?>
 <allocations>
-  <queue name="ABC">
+  <queue name="single">
     <minResources>5000 mb,5vcores</minResources>
-    <maxResources>5000 mb,5vcores</maxResources>
+    <maxResources>20000 mb,24vcores</maxResources>
     <weight>2.0</weight>
     <schedulingPolicy>fair</schedulingPolicy>
   </queue> 
   
-<queue name="XYZ">
+<queue name="multiple">
       <minResources>5000 mb,5vcores</minResources>
-      <maxResources>5000 mb,5vcores</maxResources>
+      <maxResources>20000 mb,24vcores</maxResources>
       <weight>3.0</weight>
-      <schedulingPolicy>fifo</schedulingPolicy>
-      <queue name="technology" />
-      <queue name="development" />
+      <schedulingPolicy>fair</schedulingPolicy>
+      <queue name="multiple1" />
+      <queue name="multiple2" />
+      <queue name="multiple3" />
+      <queue name="multiple4" />
 </queue>
-<queueMaxResourcesDefault>20000 mb,20vcores</queueMaxResourcesDefault>
+<queueMaxResourcesDefault>20000 mb,24vcores</queueMaxResourcesDefault>
 
 <queuePlacementPolicy>
     <rule name="specified" />
     <rule name="primaryGroup" create="false" />
-    <rule name="default" queue="ABC"/>
+    <rule name="default" queue="single"/>
   </queuePlacementPolicy>
 </allocations>

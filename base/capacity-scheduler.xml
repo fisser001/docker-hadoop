@@ -39,15 +39,15 @@
 <property><name>yarn.scheduler.capacity.application.fail-fast</name><value>false</value><description> Whether RM should fail during recovery if previous applications' queue is no longer valid.</description> </property> 
 <property><name>yarn.scheduler.capacity.root.maximum-am-resource-percent</name><value>0.4</value></property> 
 <property><name>yarn.scheduler.capacity.root.default.maximum-am-resource-percent</name><value>0.4</value></property> 
-<property><name>yarn.scheduler.capacity.default.multiple1.maximum-am-resource-percent</name><value>0.4</value></property> 
-<property><name>yarn.scheduler.capacity.default.multiple2.maximum-am-resource-percent</name><value>0.4</value></property> 
-<property><name>yarn.scheduler.capacity.default.multiple3.maximum-am-resource-percent</name><value>0.4</value></property> 
-<property><name>yarn.scheduler.capacity.default.multiple4.maximum-am-resource-percent</name><value>0.4</value></property> 
+<property><name>yarn.scheduler.capacity.root.default.multiple1.maximum-am-resource-percent</name><value>0.4</value></property> 
+<property><name>yarn.scheduler.capacity.root.default.multiple2.maximum-am-resource-percent</name><value>0.4</value></property> 
+<property><name>yarn.scheduler.capacity.root.default.multiple3.maximum-am-resource-percent</name><value>0.4</value></property> 
+<property><name>yarn.scheduler.capacity.root.default.multiple4.maximum-am-resource-percent</name><value>0.4</value></property> 
 <property><name>yarn.scheduler.capacity.root.maximum-allocation-vcores</name><value>20</value></property> 
-<property><name>yarn.scheduler.capacity.default.multiple1.maximum-allocation-vcores</name><value>5</value></property>
-<property><name>yarn.scheduler.capacity.default.multiple2.maximum-allocation-vcores</name><value>5</value></property>
-<property><name>yarn.scheduler.capacity.default.multiple3.maximum-allocation-vcores</name><value>5</value></property>
-<property><name>yarn.scheduler.capacity.default.multiple4.maximum-allocation-vcores</name><value>5</value></property>
+<property><name>yarn.scheduler.capacity.root.default.multiple1.maximum-allocation-vcores</name><value>5</value></property>
+<property><name>yarn.scheduler.capacity.root.default.multiple2.maximum-allocation-vcores</name><value>5</value></property>
+<property><name>yarn.scheduler.capacity.root.default.multiple3.maximum-allocation-vcores</name><value>5</value></property>
+<property><name>yarn.scheduler.capacity.root.default.multiple4.maximum-allocation-vcores</name><value>5</value></property>
 <property><name>yarn.scheduler.capacity.root.default.maximum-allocation-vcores</name><value>20</value></property>
 <property><name>yarn.scheduler.capacity.root.ordering-policy</name><value>fair</value></property>
 <property><name>yarn.scheduler.capacity.root.default.ordering-policy</name><value>fair</value></property>

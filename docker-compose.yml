@@ -4,6 +4,7 @@ services:
   namenode:
     image: mfisser/hadoop-namenode:1.0.0-hadoop2.7.6-java8
     container_name: namenode
+    restart: always
     volumes:
       - type: volume
         source: hadoop_namenode
@@ -16,6 +17,7 @@ services:
   resourcemanager:
     image: mfisser/hadoop-resourcemanager:1.0.0-hadoop2.7.6-java8
     container_name: resourcemanager
+    restart: always
     volumes:
       - type: volume
         source: hadoop_resourcemanager
@@ -44,6 +46,7 @@ services:
   nodemanager1:
     image: mfisser/hadoop-nodemanager:1.0.0-hadoop2.7.6-java8
     container_name: nodemanager1
+    restart: always
     volumes:
       - type: volume
         source: hadoop_nodemanager1
@@ -58,6 +61,7 @@ services:
   nodemanager2:
     image: mfisser/hadoop-nodemanager:1.0.0-hadoop2.7.6-java8
     container_name: nodemanager2
+    restart: always
     volumes:
       - type: volume
         source: hadoop_nodemanager2
