@@ -2,14 +2,14 @@
 <allocations>
   <queue name="single">
     <minResources>5000 mb,5vcores</minResources>
-    <maxResources>20000 mb,24vcores</maxResources>
+    <maxResources>102000 mb,120vcores</maxResources>
     <weight>2.0</weight>
     <schedulingPolicy>fair</schedulingPolicy>
   </queue> 
   
 <queue name="multiple">
       <minResources>5000 mb,5vcores</minResources>
-      <maxResources>20000 mb,24vcores</maxResources>
+      <maxResources>102000 mb,120vcores</maxResources>
       <weight>3.0</weight>
       <schedulingPolicy>fair</schedulingPolicy>
       <queue name="multiple1" />
@@ -17,7 +17,7 @@
       <queue name="multiple3" />
       <queue name="multiple4" />
 </queue>
-<queueMaxResourcesDefault>20000 mb,24vcores</queueMaxResourcesDefault>
+<queueMaxResourcesDefault>102000 mb,120vcores</queueMaxResourcesDefault>
 
 <queuePlacementPolicy>
     <rule name="specified" />
